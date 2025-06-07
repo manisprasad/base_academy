@@ -10,7 +10,7 @@ import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
-  NavigationMenuLink,
+
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { useAuth } from '@/hooks/useAuth';
@@ -82,15 +82,15 @@ const Navbar: React.FC = () => {
             <NavigationMenuList className="gap-2">
               {navLinks.map((link) => (
                 <NavigationMenuItem key={link.name}>
-                  <NavigationMenuLink
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className={cn(
                       "text-sm font-medium transition-colors hover:text-primary",
                       " rounded-md"
                     )}
                   >
                     {link.name}
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
