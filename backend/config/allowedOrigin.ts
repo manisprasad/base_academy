@@ -1,4 +1,5 @@
 export const origins:string[] = [
+    "https://baseacademy.in"
     "https://base-academy.vercel.app",
     "http://localhost:5173",
     "http://192.168.210.84:5173",
