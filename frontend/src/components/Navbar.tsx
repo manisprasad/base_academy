@@ -10,7 +10,7 @@ import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
-  
+  NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { useAuth } from '@/hooks/useAuth';
@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
   ];
 
   const profileLinks = [
-    { name: 'My-Courses', href: '/student/my-courses' },
+    { name: `${auth.user?.roles === 5150 ? "Upload Course" : 'My-Courses'}`, href: `${auth.user?.roles === 5150 ? "/admin/upload" : '/student/my-courses'}` },
     { name: 'Settings', href: '/settings' },
     { name: 'Logout', href: '/logout' }
   ];
@@ -82,10 +82,7 @@ const Navbar: React.FC = () => {
             <NavigationMenuList className="gap-2">
               {navLinks.map((link) => (
                 <NavigationMenuItem key={link.name}>
-
-
-                  <Link to={link.href}>{link.name}</Link>
-{/*                   <NavigationMenuLink
+                  <NavigationMenuLink
                     href={link.href}
                     className={cn(
                       "text-sm font-medium transition-colors hover:text-primary",
@@ -93,7 +90,7 @@ const Navbar: React.FC = () => {
                     )}
                   >
                     {link.name}
-                  </NavigationMenuLink> */}
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
