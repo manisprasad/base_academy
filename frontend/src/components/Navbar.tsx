@@ -82,7 +82,10 @@ const Navbar: React.FC = () => {
             <NavigationMenuList className="gap-2">
               {navLinks.map((link) => (
                 <NavigationMenuItem key={link.name}>
-                  <NavigationMenuLink
+
+
+                  <Link to={link.href}>{link.name}</Link>
+{/*                   <NavigationMenuLink
                     href={link.href}
                     className={cn(
                       "text-sm font-medium transition-colors hover:text-primary",
@@ -90,7 +93,7 @@ const Navbar: React.FC = () => {
                     )}
                   >
                     {link.name}
-                  </NavigationMenuLink>
+                  </NavigationMenuLink> */}
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
