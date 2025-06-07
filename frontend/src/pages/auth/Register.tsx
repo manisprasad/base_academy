@@ -54,7 +54,7 @@ export default function Register() {
             console.log("Form Data:", formData);
 
             const {data}: { data:{success: boolean, message:string}} = await axios.post(
-                "http://localhost:3000/register",
+                "https://base-academy-backend.vercel.app/register",
                 {
                     ...formData,
                     classes: formData.class,
