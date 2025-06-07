@@ -26,7 +26,7 @@ export default function Login() {
     setIsLoading(true);
 
     try {
-      const response = await axios.post("https://base-academy-backend.vercel.app/api/courses/login", {
+      const response = await axios.post("https://base-academy-backend.vercel.app/login", {
         phone: formData.phone,
         password: formData.password,
       },
